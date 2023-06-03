@@ -22,7 +22,7 @@ app.use(cors({
  }));
 CONNECTDB();
 const port=3000;
-
+app.use('/',()=>{"hi"})
 
 app.use('/user',userrouter)
 app.use('/jobs',jobrouter)
