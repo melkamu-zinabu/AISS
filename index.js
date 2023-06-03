@@ -22,7 +22,7 @@ app.use(cors({
  }));
 
 const port=3000;
-app.use('/',()=>{"hi"})
+app.get('/',(req,res)=>{res.send("hi")})
 
 app.use('/user',userrouter)
 app.use('/jobs',jobrouter)
@@ -36,6 +36,6 @@ CONNECTDB().then(()=>{
 
 
 function MEL(){
-    
+        r
         console.log(`bro running ${port}`);
 }
