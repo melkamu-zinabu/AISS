@@ -20,7 +20,7 @@ app.use(cors({
    origin: 'http://localhost:3001', // specify the URL of the client that can make requests
    methods: ['GET', 'POST','DELETE','PUT'], // specify the methods that are allowed
  }));
-CONNECTDB();
+
 const port=3000;
 app.use('/',()=>{"hi"})
 
@@ -29,8 +29,11 @@ app.use('/jobs',jobrouter)
 app.use('/product',productrouter)
 app.use('/news',newsrouter)
 app.use('/market',marketrouter)
+CONNECTDB().then(()=>{
+        app.listen(port,MEL);
 
-app.listen(port,MEL);
+})
+
 
 function MEL(){
     
